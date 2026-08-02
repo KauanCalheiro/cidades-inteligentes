@@ -20,6 +20,8 @@
 
 **Data:** 07/08/2026
 
+---
+
 **Diagnóstico Inicial da Cidade**
 
 **Linha de base para o projeto da disciplina**
@@ -67,7 +69,7 @@ Registre:
 
 Se três ou mais respostas forem “não”: a cidade continua sendo objeto válido, mas o grupo poderá ter que compensar com fontes federais e estaduais e poderá ter que registrar essa limitação metodologicamente nas entregas seguintes.
 
-## 
+##
 
 ## **Etapa 2 — Ficha-retrato**
 
@@ -104,7 +106,7 @@ Preencha a partir de **fontes oficiais**, registrando sempre a fonte e o ano de 
 | ? |
 | :---- |
 
-### 
+###
 
 ### **2.3 Infraestrutura e serviços urbanos**
 
@@ -138,7 +140,7 @@ Preencha a partir de **fontes oficiais**, registrando sempre a fonte e o ano de 
 
 **Fontes sugeridas:** IBGE Cidades (cidades.ibge.gov.br), Atlas do Desenvolvimento Humano no Brasil (atlasbrasil.org.br), SNIS (gov.br/cidades), DATASUS/TabNet, INEP, Base dos Dados (basedosdados.org), Portal da Transparência municipal, Tesouro Nacional/SICONFI.
 
-## 
+##
 
 ## **Etapa 3 — Mapa de atores**
 
@@ -170,7 +172,7 @@ Cidade inteligente não é problema de tecnologia; é problema de coordenação 
 
 3) Existe algum programa, lei municipal, plano ou iniciativa já em curso relacionado a cidade inteligente, inovação ou transformação digital? Registre com fonte.
 
-## 
+##
 
 ## **Etapa 4 — Leitura crítica**
 
@@ -182,7 +184,7 @@ Em **até uma página**, responda:
 
 3. Que dado o grupo procurou e **não** encontrou? Onde procurou?
 
-## 
+##
 
 ## **Entregáveis**
 
@@ -198,7 +200,7 @@ Documento único (4 a 6 páginas) contendo:
 
 Este documento é o **capítulo 1 do portfólio** e deverá ser revisado na entrega final.
 
-## 
+##
 
 ## **Critérios de avaliação**
 

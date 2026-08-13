@@ -5,10 +5,11 @@ import re
 import sys
 from pathlib import Path
 
-# ponytail: casa pelos data-timestamp, não pelos nomes de classe (que o Meet ofusca e troca)
+# ponytail: casa pelos data-timestamp, não pelos nomes de classe (que o Meet ofusca e troca).
+# \s* entre as tags porque alguns dumps vêm indentados.
 SEG = re.compile(
-    r'data-timestamp="\d+">(\d[\d:]*)</div>'
-    r'<div[^>]*data-timestamp="\d+">(.*?)</div>',
+    r'data-timestamp="\d+"\s*>\s*(\d[\d:]*)</div>\s*'
+    r'<div[^>]*data-timestamp="\d+"\s*>(.*?)</div>',
     re.S,
 )
 SPEAKER = re.compile(r"\(([^)]+)\)\n")
@@ -19,6 +20,11 @@ def segments(raw):
     for tempo, bloco in SEG.findall(raw):
         partes = SPEAKER.split(html.unescape(bloco))
         # partes = [antes, falante, texto, falante, texto, ...]
+        if len(partes) == 1:  # dump sem marcação de falante
+            texto = " ".join(partes[0].split())
+            if texto:
+                yield tempo.strip(), None, texto
+            continue
         atual = None  # une as metades do mesmo falante, sem cruzar o timestamp
         for falante, texto in zip(partes[1::2], partes[2::2]):
             texto = " ".join(texto.split())
@@ -36,7 +42,8 @@ def segments(raw):
 
 def to_markdown(raw):
     return "\n\n".join(
-        f"**[{t}] {falante}:** {texto}" for t, falante, texto in segments(raw)
+        f"**[{t}] {falante}:** {texto}" if falante else f"**[{t}]** {texto}"
+        for t, falante, texto in segments(raw)
     )
 
 
@@ -48,6 +55,13 @@ def demo():
     assert to_markdown(raw) == (
         "**[0:00] ANA:** olá a\n\n**[0:08] ANA:** todos\n\n**[0:08] BOB:** e aí"
     )
+    # dump indentado e sem falante
+    indentado = (
+        '<div class="QvmvOc" data-timestamp="2800">0:03</div>\n'
+        '                    <div class="wyBDIb" data-timestamp="2800">bom dia,\n'
+        "                        pessoal</div>"
+    )
+    assert to_markdown(indentado) == "**[0:03]** bom dia, pessoal"
     assert to_markdown("<div>sem transcrição</div>") == ""
 
 

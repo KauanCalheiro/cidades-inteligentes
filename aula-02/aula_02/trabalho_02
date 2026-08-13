@@ -25,7 +25,7 @@ Referência obrigatória: CNM. *Municípios Inteligentes, Humanos e Sustentávei
 
 ## 1 – Os cinco níveis de um Município Inteligente
 
-**Cidade alvo da proposta de integração técnica: Lajeado – RS**, cidade-polo do Vale do Taquari: 96.879 habitantes (IBGE, 2025), 1.026,47 hab/km², 99,67% de urbanização. A proposta articula os Níveis 2 (infraestrutura, serviços e redes), 4 (serviços e TI) e 5 (IoT) do modelo CNM (2021).
+**Cidade alvo da proposta de integração técnica: Lajeado – RS**, cidade-polo do Vale do Taquari: aproximadamente 96.879 habitantes (IBGE, 2025), 1.026,47 hab/km², 99,67% de urbanização. A proposta articula os Níveis 2 (infraestrutura, serviços e redes), 4 (serviços e TI) e 5 (IoT) do modelo CNM (2021).
 
 ### 1.1 Diagnóstico da infraestrutura existente (Nível 2)
 
@@ -116,6 +116,13 @@ A participação cidadã é o que diferencia uma cidade *inteligente* de uma cid
 
 ![Diagrama Canva](canvas_Municipio_Inteligente_Lajeado.jpg)
 
+---
+
+## Fontes e uso de inteligência artificial
+
+A base fundamental deste trabalho é o documento entregue pelo grupo na aula anterior, onde constam os links e as fontes oficiais consultadas para cada indicador. Todos os dados, atores e iniciativas citados aqui vêm desse levantamento, complementado pelo documento base da atividade.
+
+O grupo utilizou o **Claude (Anthropic)** como ferramenta de apoio, em duas frentes: revisão e organização do texto, e montagem do canvas de município inteligente a partir do conteúdo produzido pelo grupo. As decisões de conteúdo, a escolha dos problemas priorizados e a conferência das informações nas fontes oficiais foram feitas pelos integrantes.
 
 ##
 

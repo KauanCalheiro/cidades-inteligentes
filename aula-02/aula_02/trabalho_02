@@ -25,63 +25,63 @@ Referência obrigatória: CNM. *Municípios Inteligentes, Humanos e Sustentávei
 
 ## 1 – Os cinco níveis de um Município Inteligente
 
-**Cidade alvo da proposta de integração técnica: Lajeado – RS**, cidade-polo do Vale do Taquari, com aproximadamente 96.879 habitantes (IBGE, 2025), densidade de 1.026,47 hab/km² e grau de urbanização de 99,67%. A proposta a seguir articula o Nível 2 (Infraestrutura, Serviços e Redes), o Nível 4 (Serviços e Tecnologia da Informação) e o Nível 5 (Internet das Coisas), conforme o modelo CNM (2021).
+**Cidade alvo da proposta de integração técnica: Lajeado – RS**, cidade-polo do Vale do Taquari: 96.879 habitantes (IBGE, 2025), 1.026,47 hab/km², 99,67% de urbanização. A proposta articula os Níveis 2 (infraestrutura, serviços e redes), 4 (serviços e TI) e 5 (IoT) do modelo CNM (2021).
 
 ### 1.1 Diagnóstico da infraestrutura existente (Nível 2)
 
-Com base na ficha-retrato já levantada, Lajeado apresenta um quadro de infraestrutura desigual entre serviços:
+A ficha-retrato mostra infraestrutura desigual entre serviços:
 
-- **Saneamento – ponto crítico:** cobertura de abastecimento de água de 92,18%, mas cobertura de coleta de esgoto de apenas 2,2% (2022), ainda que 87,2% do esgoto efetivamente coletado seja tratado. O gargalo não está no tratamento, e sim na rede coletora, hoje operada pela Corsan sob fiscalização da Agergs (concessionária estadual, fora da governança direta do município).
-- **Energia e iluminação pública:** distribuição concedida à CEEE Equatorial (privatizada em 2021); a manutenção da rede de iluminação pública permanece sob responsabilidade da Prefeitura, o que cria uma divisão de competências entre dado de consumo (concessionária) e dado de operação/manutenção (município).
-- **Mobilidade:** frota de 82.357 veículos para uma população de 96.879 habitantes, cerca de 85 veículos a cada 100 habitantes, com transporte coletivo urbano concentrado em um único operador (Expresso Azul S/A, sistema de bilhetagem "Tio Lajeado"), sem alternativa modal.
+- **Saneamento (crítico):** água em 92,18% dos domicílios, mas coleta de esgoto em 2,2% (2022), com 87,2% do coletado tratado. O gargalo é a rede coletora, e não o tratamento. A rede é operada pela Corsan sob fiscalização da Agergs, fora da governança municipal.
+- **Energia:** distribuição com a CEEE Equatorial (privatizada em 2021); a iluminação pública fica com a Prefeitura, de modo que o dado de consumo é da concessionária e o de manutenção é do município.
+- **Mobilidade:** 82.357 veículos para 96.879 habitantes (85/100 hab.) e um único operador de transporte coletivo (Expresso Azul S/A, bilhetagem "Tio Lajeado"), sem alternativa modal.
 - **Conectividade digital:** 92,09% dos domicílios com acesso à internet (2022), patamar favorável à implantação de serviços digitais e sensoriamento urbano.
-- **Resíduos sólidos:** cobertura de 100% na coleta, com coleta seletiva ativa, operada por duas empresas terceirizadas (Coleturb e GLV) sob gestão da Secretaria do Meio Ambiente, Saneamento, Sustentabilidade e Bem-Estar Animal (SEMA).
+- **Resíduos:** coleta em 100% do município, com seletiva ativa, por duas terceirizadas (Coleturb e GLV) sob gestão da SEMA.
 
-Um traço estrutural do Nível 2 em Lajeado é que boa parte dessa infraestrutura crítica (água/esgoto, energia, transporte coletivo) é operada por concessionárias privadas ou estaduais, e não diretamente pela Prefeitura, o que já antecipa o principal desafio da proposta de integração: governança de dados que não nascem no município.
+O traço estrutural do Nível 2 é que a infraestrutura crítica (água/esgoto, energia, transporte) é operada por concessionárias, e não pela Prefeitura, o que antecipa o principal desafio: governar dados que não nascem no município.
 
 ### 1.2 Situação atual dos serviços públicos digitais e sistemas de informação municipal (Nível 4)
 
-O diagnóstico da Etapa 3 (Mapa de atores) mostrou que **Lajeado não possui secretaria, autarquia ou empresa própria de Tecnologia da Informação**. A área de TI está subordinada à Secretaria de Administração (SEAD), como um setor interno sem orçamento, quadro de pessoal ou estrutura autônoma apesar de o orçamento municipal anual ultrapassar R$ 767 milhões (2025). A interface com inovação é feita de forma diluída, por meio da Secretaria de Desenvolvimento Econômico, Inovação e Agricultura (SEDETAG) e do Conselho de Ciência, Tecnologia e Inovação.
+**Lajeado não possui secretaria, autarquia ou empresa própria de TI**: a área é um setor interno da SEAD, sem orçamento, quadro próprio ou autonomia, apesar do orçamento municipal de R$ 767 milhões (2025). A pauta de inovação corre diluída na SEDETAG e no Conselho de Ciência, Tecnologia e Inovação.
 
 Ainda assim, o município apresenta ativos digitais relevantes para o Nível 4:
 
 - Portal de transparência e portal de dados abertos ativos (grp.lajeado.rs.gov.br);
 - Sistema e-SIC para pedidos de informação, tanto do Executivo quanto do Legislativo;
-- Projeto em curso de digitalização das secretarias e implantação de Inteligência Artificial em tarefas administrativas, conduzido pela SEDETAG desde 2025;
-- Ecossistema local de inovação (Tecnovates, ligado à Univates), que pode atuar como parceiro técnico do setor público.
+- Digitalização das secretarias e IA em tarefas administrativas, pela SEDETAG desde 2025;
+- Tecnovates/Univates como possível parceiro técnico do setor público.
 
-O ponto de atenção é que esses ativos crescem sem um órgão central de governança de TI, o Nível 4 avança em iniciativas pontuais (transparência, projeto de IA), mas carece da espinha dorsal institucional que normalmente sustenta a integração de sistemas entre secretarias.
+Esses ativos crescem sem órgão central de governança: o Nível 4 avança em iniciativas pontuais, mas sem a espinha dorsal institucional que sustenta a integração entre secretarias.
 
 ### 1.3 Potencial de aplicação de Internet das Coisas (Nível 5)
 
-Cruzando os problemas identificados na Leitura Crítica (Etapa 4) com a infraestrutura de conectividade já disponível (92% dos domicílios conectados), destacam-se três frentes prioritárias de IoT para Lajeado:
+Cruzando a Leitura Crítica (Etapa 4) com os 92% de domicílios conectados, três frentes de IoT se destacam:
 
-1. **Monitoramento de cheias do rio Taquari:** sensores de nível fluviométrico e pluviômetros conectados em tempo real, integrados à Defesa Civil municipal resposta direta ao ponto cego identificado na Etapa 4.2 (nenhum indicador oficial da ficha-retrato captura o risco de enchente, apesar do impacto real das cheias de 2023–2024 sobre a cidade).
-2. **Saneamento e água:** sensoriamento de vazão e qualidade na rede operada pela Corsan, e sensores de nível em pontos críticos de drenagem urbana, para compensar a baixíssima cobertura de rede coletora de esgoto (2,2%) com monitoramento preventivo de transbordamentos e alagamentos.
-3. **Mobilidade e transporte coletivo:** GPS embarcado e contagem de passageiros no sistema "Tio Lajeado" (Expresso Azul), alimentando um painel público de tempo real, como forma de tornar o transporte coletivo mais competitivo frente ao alto índice de motorização individual (85 veículos/100 habitantes).
+1. **Cheias do Taquari:** sensores fluviométricos e pluviômetros em tempo real ligados à Defesa Civil, resposta ao ponto cego da Etapa 4.2, já que nenhum indicador oficial capta o risco de enchente apesar das cheias de 2023 e 2024.
+2. **Saneamento:** sensores de vazão e qualidade na rede da Corsan e de nível em pontos críticos de drenagem, compensando os 2,2% de rede coletora com monitoramento preventivo de transbordamentos.
+3. **Mobilidade:** GPS embarcado e contagem de passageiros no "Tio Lajeado", alimentando painel público em tempo real, resposta aos 85 veículos/100 habitantes.
 
 ### 1.4 Proposta de integração entre os três níveis
 
 A proposta é a criação de uma **Plataforma Municipal de Dados Urbanos (PMDU)**, hospedada em nuvem, com a seguinte arquitetura lógica:
 
-- **Camada de coleta (Nível 5 – IoT):** sensores de nível fluviométrico/pluviométrico, sensores de drenagem, GPS do transporte coletivo e medidores inteligentes de consumo, conectados via redes de baixo consumo (LPWAN/NB-IoT), aproveitando a boa cobertura digital já existente no município.
-- **Camada de integração (Nível 2 → Nível 4):** um barramento de interoperabilidade (API Gateway) que recebe dados das concessionárias (Corsan, CEEE Equatorial, Expresso Azul) mediante cláusulas contratuais e convênios de compartilhamento de dados, e os organiza em formato aberto, compatível com o portal de dados já existente.
-- **Camada de aplicação (Nível 4):** painéis públicos de indicadores (transporte, alertas de risco, qualidade do ar/água), publicados no próprio portal de transparência, e um módulo interno de alerta automático para a Defesa Civil e a SEPLAN.
+- **Coleta (Nível 5):** sensores fluviométricos, pluviométricos e de drenagem, GPS do transporte e medidores inteligentes, via LPWAN/NB-IoT.
+- **Integração (dos Níveis 2 para o 4):** API Gateway que recebe dados das concessionárias (Corsan, CEEE Equatorial, Expresso Azul) por cláusula contratual e os publica em formato aberto, compatível com o portal existente.
+- **Aplicação (Nível 4):** painéis públicos (transporte, alertas de risco, qualidade da água) no portal de transparência e módulo de alerta automático para Defesa Civil e SEPLAN.
 
-Para viabilizar essa integração, é imprescindível criar (ou formalizar) uma estrutura mínima de governança de TI, mesmo que inicialmente como um comitê intersecretarial, e não uma secretaria completa, já que hoje a TI de Lajeado não tem mandato, orçamento nem equipe própria para sustentar um projeto dessa natureza. Sob o ponto de vista de sustentabilidade econômica, a proposta prioriza sensores de baixo custo e reaproveitamento de infraestrutura de conectividade já instalada, além de parcerias com a Tecnovates/Univates para redução de custo de desenvolvimento e testes-piloto, evitando um investimento único e concentrado que dificilmente seria viável dado o tamanho atual da estrutura de TI municipal.
+A integração exige formalizar uma governança mínima de TI, ao menos um comitê intersecretarial, já que hoje a TI não tem mandato, orçamento nem equipe. A sustentabilidade econômica vem de sensores de baixo custo, reaproveitamento da conectividade instalada e parceria com a Tecnovates/Univates para desenvolvimento e pilotos, em vez de um investimento único concentrado.
 
 ### 1.5 Privacidade e proteção de dados pessoais (LGPD)
 
 Como o transporte coletivo (bilhetagem "Tio Lajeado") e eventuais câmeras de monitoramento de trânsito envolvem dados pessoais (geolocalização, hábitos de deslocamento, imagem), a plataforma precisa observar a LGPD desde a concepção (*privacy by design*):
 
 - Anonimização e agregação dos dados de deslocamento antes da publicação em painéis públicos;
-- Definição de um Encarregado de Proteção de Dados (DPO) municipal, hoje inexistente de forma explícita dado que não há sequer uma estrutura de TI formalizada;
+- Definição de um Encarregado (DPO) municipal, hoje inexistente;
 - Contratos com as concessionárias (Corsan, CEEE Equatorial, Expresso Azul) prevendo cláusulas específicas de compartilhamento de dados, finalidade de uso e prazo de retenção;
-- Os dados de monitoramento ambiental (nível do rio, qualidade da água) não são dados pessoais e podem ser publicados integralmente em tempo real, sem essas restrições, o que os torna um ponto de partida de menor risco jurídico para a plataforma.
+- Dados ambientais (nível do rio, qualidade da água) não são pessoais e podem ser publicados em tempo real, o que os torna o ponto de partida de menor risco jurídico.
 
 ### 1.6 Participação cidadã e impacto esperado
 
-A proposta prevê um canal cidadão integrado ao portal de dados abertos, permitindo que moradores reportem falhas de infraestrutura (buracos, vazamentos, pontos de alagamento) diretamente na plataforma, complementando os sensores fixos com informação georreferenciada gerada pela população, o que é especialmente relevante em Lajeado, onde a Leitura Crítica já identificou que a experiência vivida (risco de enchente) não é capturada pelos indicadores oficiais. O impacto esperado inclui: redução do tempo de resposta a alagamentos, maior previsibilidade do transporte coletivo, e um primeiro passo institucional para consolidar uma governança de dados que hoje o município simplesmente não possui.
+Um canal cidadão integrado ao portal permite reportar falhas de infraestrutura (buracos, vazamentos, alagamentos), complementando os sensores fixos com dado georreferenciado da população, o que é relevante porque a Leitura Crítica mostrou que a experiência vivida não aparece nos indicadores oficiais. Impacto esperado: menor tempo de resposta a alagamentos, transporte mais previsível e um primeiro passo de governança de dados.
 
 ---
 
@@ -89,27 +89,26 @@ A proposta prevê um canal cidadão integrado ao portal de dados abertos, permit
 
 ### a) Dois exemplos reais aplicáveis a Lajeado
 
-**Exemplo 1 – Digitalização das secretarias com foco em atendimento ao cidadão.** O projeto de digitalização das secretarias e implantação de Inteligência Artificial, já em desenvolvimento pela SEDETAG desde 2025, é um exemplo real e local de tecnologia colocada a serviço das pessoas: em vez de investir isoladamente em sensores ou infraestrutura de ponta, o município está priorizando reduzir a burocracia e o tempo de atendimento ao cidadão nas secretarias, o que é a essência da dimensão humana do modelo CNM, tecnologia como meio para melhorar o serviço prestado, não como fim em si.
+**Exemplo 1 – Digitalização das secretarias (SEDETAG, desde 2025).** Em vez de investir isoladamente em sensores, o município prioriza reduzir burocracia e tempo de atendimento. É tecnologia como meio para melhorar o serviço, e não como fim, que é a essência da dimensão humana no modelo CNM.
 
-**Exemplo 2 – Ecossistema de inovação Tecnovates (Univates).** A existência de uma incubadora e um ecossistema de inovação local, ligado a uma universidade da própria cidade, ilustra a dimensão de capital humano e sustentabilidade econômica do modelo: soluções de cidade inteligente não precisam ser importadas de grandes empresas de tecnologia; podem nascer localmente, com menor custo, maior aderência à realidade do Vale do Taquari e geração de emprego qualificado no próprio município, reduzindo a dependência de fornecedores externos e fortalecendo a economia local, um dos pilares do território inteligente do modelo CNM.
+**Exemplo 2 – Tecnovates (Univates).** Uma incubadora ligada a uma universidade da própria cidade ilustra o capital humano e a sustentabilidade econômica do modelo: soluções podem nascer localmente, com menor custo, mais aderência ao Vale do Taquari e emprego qualificado no município, reduzindo a dependência de fornecedores externos.
 
 ### b) Decisões técnicas de Engenharia e Tecnologia e desigualdades sociais
 
 Decisões técnicas podem tanto reduzir quanto aprofundar desigualdades, a depender de como são desenhadas:
 
-- **Pode reduzir:** priorizar a rede coletora de esgoto (hoje com apenas 2,2% de cobertura) como primeiro alvo de investimento em saneamento inteligente afeta diretamente a qualidade de vida da população mais vulnerável, que é justamente quem tem menor capacidade de arcar com soluções individuais (fossas, poços). Da mesma forma, dimensionar o monitoramento de enchentes priorizando os bairros historicamente mais afetados pelas cheias do Taquari, em vez de distribuir sensores de forma uniforme pelo território, é uma decisão técnica que direciona o benefício para quem mais precisa.
-- **Pode aprofundar:** se a plataforma de dados urbanos depender exclusivamente de aplicativos de smartphone para reportar problemas ou acessar serviços, parte da população sem acesso a dados móveis ou com menor letramento digital fica de fora, mesmo em um município com 92% dos domicílios conectados, a exclusão residual tende a recair sobre os mais pobres e idosos. Da mesma forma, priorizar sensoriamento de trânsito e mobilidade voltado ao automóvel particular (ex.: semáforos inteligentes, estacionamento inteligente) sem investir proporcionalmente no transporte coletivo tende a beneficiar quem já tem veículo próprio, reforçando a desigualdade de acesso à cidade identificada na Leitura Crítica (índice de motorização de 85 veículos/100 habitantes frente a um único operador de ônibus).
+- **Pode reduzir:** eleger a rede coletora de esgoto (2,2%) como primeiro alvo atinge quem tem menor capacidade de arcar com soluções individuais (fossas, poços). Da mesma forma, concentrar sensores nos bairros historicamente atingidos pelas cheias, em vez de distribuí-los uniformemente, direciona o benefício a quem mais precisa.
+- **Pode aprofundar:** se a plataforma depender só de aplicativo, a exclusão residual dos 92% conectados recai sobre os mais pobres e os idosos. E priorizar sensoriamento voltado ao automóvel (semáforos e estacionamento inteligentes) sem contrapartida no transporte coletivo beneficia quem já tem carro, reforçando a desigualdade de acesso apontada na Leitura Crítica.
 
 O ponto central é que a tecnologia não é neutra: a escolha de onde instalar o primeiro sensor, de qual canal usar para coletar denúncias, ou de qual serviço digitalizar primeiro é, também, uma escolha política sobre quem se beneficia primeiro.
 
 ### c) Participação cidadã na concepção, implantação e avaliação de soluções
 
-A participação cidadã é o que diferencia uma cidade *inteligente* de uma cidade apenas *instrumentada*. No caso de Lajeado, isso é particularmente relevante porque a própria Leitura Crítica do grupo identificou uma lacuna entre o retrato estatístico oficial e a experiência vivida pela população (o risco de enchente do Taquari não aparece em nenhum indicador oficial coletado, mas é amplamente reconhecido pelos moradores). Isso mostra, na prática, que:
+A participação cidadã é o que diferencia uma cidade *inteligente* de uma cidade apenas *instrumentada*. Em Lajeado isso é evidente: a Leitura Crítica encontrou uma lacuna entre o retrato estatístico e a experiência vivida: o risco de enchente não aparece em nenhum indicador oficial, mas é reconhecido pelos moradores. Daí que:
 
-- Sem canais estruturados de escuta, o poder público pode continuar investindo com base apenas no que os indicadores formais mostram, deixando de lado problemas que a população vive diariamente;
-- A participação cidadã na fase de **concepção** ajuda a priorizar corretamente os investimentos (por exemplo, apontando bairros mais afetados por alagamentos, mesmo sem um indicador oficial correspondente);
-- Na fase de **implantação**, a participação evita o desperdício de recursos em soluções tecnicamente corretas mas socialmente inadequadas (por exemplo, um aplicativo que a população não usa por falta de confiança ou de divulgação);
-- Na fase de **avaliação**, a percepção da população é um contraponto necessário aos indicadores técnicos, um serviço pode estar "funcionando" segundo os números da prefeitura e, ainda assim, não corresponder à experiência real de quem vive na cidade, exatamente como o grupo já observou ao comparar os dados oficiais com a vivência urbana dos próprios integrantes.
+- **Concepção:** a escuta prioriza corretamente os investimentos, apontando bairros alagáveis sem indicador oficial correspondente;
+- **Implantação:** evita desperdício em soluções tecnicamente corretas mas socialmente inadequadas, como um aplicativo que a população não usa;
+- **Avaliação:** a percepção da população contrapõe os indicadores técnicos, já que um serviço pode estar "funcionando" nos números da prefeitura e não corresponder à experiência de quem vive na cidade.
 
 ---
 

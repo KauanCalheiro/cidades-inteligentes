@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Como se Mede uma Cidade Inteligente</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<p><img src="data:image/png;base64,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" alt=""></p>
+<p><strong>UNIVATES – GRADUAÇÃO</strong></p>
+<p><strong>Unidade de Aprendizagem:</strong> CIDADES INTELIGENTES
+<strong>Professor:</strong> Edson Moacir Ahlert
+<strong>Nome dos participantes:</strong></p>
+<ul>
+<li>Everton Luiz de Oliveira</li>
+<li>Kauan Morinel Calheiro</li>
+<li>Larissa Alissa Träsel</li>
+<li>Samantha Danieli Gerhardt</li>
+</ul>
+<p><strong>Data:</strong> 21/08/2026
+<strong>Município escolhido:</strong> Lajeado – RS</p>
+<hr>
+<h1 id="como-se-mede-uma-cidade-inteligente">Como se Mede uma Cidade Inteligente</h1>
+<h2 id="indicadores-rankings-e-revisão-do-canvas">Indicadores, rankings e revisão do Canvas</h2>
+<p>Este trabalho continua as Atividades 1 (Ficha-retrato e Mapa de Atores) e 2 (Planejamento de Soluções e Canvas de Município Inteligente). Agora comparamos Lajeado (RS) e a nossa proposta, a Plataforma Municipal de Dados Urbanos (PMDU), com dois instrumentos externos de medição: o material do curso Cidades Inteligentes (EV.G/Enap, 2021) e o Ranking Connected Smart Cities (CSC), na edição de 2025.</p>
+<blockquote>
+<p><strong>Observação.</strong> O material do curso é de 2021. De 2021 para 2025, o principal ranking brasileiro de cidades inteligentes mudou bastante: passou de uma amostra de pouco mais de 700 municípios para todos os municípios do país, e passou a usar normas ISO/ABNT como base da maioria dos seus indicadores. Explicamos isso na Etapa 1.</p>
+</blockquote>
+<hr>
+<h2 id="etapa-1-ficha-de-confronto">Etapa 1: Ficha de confronto</h2>
+<table>
+<thead>
+<tr>
+<th>Afirmação do material (com módulo)</th>
+<th>Situação verificada hoje</th>
+<th>Fonte primária</th>
+<th>Consequência para o projeto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[Obrigatória - Módulo 3]</strong> O material afirma que o principal ranking brasileiro de cidades inteligentes avalia cerca de <strong>700 municípios</strong> e que o <strong>Índice Firjan</strong> é uma de suas referências de base para o cálculo da nota. É o que sustenta, ali, a ideia de que medir cidade inteligente no Brasil ainda era um retrato de amostra pequena, com régua vinda de um índice de desenvolvimento municipal.</td>
+<td><strong>Superada, em dois pontos.</strong> O CSC (Urban Systems/Necta) analisava &quot;mais de 700 municípios&quot; em 2016–2017, mas a nota nunca saiu do Índice Firjan: sempre foi índice próprio, o Índice de Qualidade Mercadológica. Na 11ª edição (2025) passou a avaliar <strong>todos os 5.570 municípios</strong>, com <strong>75 indicadores em 13 eixos</strong>, 59 deles (78,7%) ligados às ISO/ABNT 37120, 37122, 37123 e 37125. E o <strong>IFDM continua, como 1 dos 75 indicadores</strong> do eixo Governança.</td>
+<td>Ficha oficial de Lajeado – RS na plataforma de consulta por município do Ranking CSC (Scipopulis/SPIn/Urban Systems), consultada e com prints capturados pelo grupo em 18/08/2026 (<strong>fonte [1]</strong>). Complementada pelo Portal Connected Smart Cities, <em>Ranking Connected Smart Cities inicia novo ciclo com abrangência nacional e metodologia ampliada</em>, set. 2025, que anuncia a mudança de metodologia (<strong>fonte [2]</strong>).</td>
+<td>Duas correções, com dado tirado da própria ficha do município: (i) o ranking não avalia mais uma amostra pequena (~700 → 5.570 municípios), então a posição de Lajeado vale hoje como comparação com o país inteiro; (ii) o IFDM segue no desenho, mas pesa pouco (1 de 75 indicadores, em um único eixo). Isso reforça a escolha de escrever os indicadores do Canvas sobre as normas ISO/ABNT (Etapa 3.2), e não sobre o IFDM.</td>
+</tr>
+<tr>
+<td><strong>[Livre escolha - Módulo 3]</strong> O material apresenta as normas <strong>ISO 37120</strong> (serviços urbanos e qualidade de vida) e <strong>ISO 37122</strong> (cidades inteligentes) como a base de indicadores para cidades inteligentes e sustentáveis, no recorte de 2021. São as duas únicas normas da família 371xx citadas, e o material as trata como o conjunto completo disponível.</td>
+<td><strong>Continua valendo, mas o conjunto cresceu.</strong> A ABNT NBR ISO 37120:2018 e a 37122:2020 seguem em vigor; depois de 2021 entraram a 37123:2021 (cidades resilientes), o documento de orientação sobre usar as três juntas (ISO/AWI 37124) e a ISO 37125, já usada como referência no CSC 2025. A ficha de Lajeado confirma: a maioria dos 75 indicadores traz o selo &quot;ABNT ISO&quot;.</td>
+<td>ABNT Certificadora, <em>Certificação de Indicadores para Cidades e Comunidades Sustentáveis</em>, página que registra a vigência das ISO 37120/37122/37123 e menciona a 37125 (<strong>fonte [3]</strong>). Confirmado na prática pelos selos &quot;ABNT ISO&quot; que aparecem indicador por indicador na ficha de Lajeado (<strong>fonte [1]</strong>, consulta em 18/08/2026).</td>
+<td>Dá segurança para reescrever os indicadores de sucesso do Canvas sobre as ISO 37120/37122/37123 (Etapa 3.2): não é escolha aleatória do grupo, é a mesma lógica que organiza os 75 indicadores oficiais do ranking em que Lajeado é avaliada. E amplia o escopo, porque a 37123 traz o vocabulário de resiliência que faltava para tratar o risco de cheia.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links das fontes primárias citadas na tabela:</strong></p>
+<ul>
+<li><strong>[1]</strong> Ficha de Lajeado – RS, Ranking Connected Smart Cities: <a href="https://ranking.mysmartcity.scipopulis.com/ranking/city/4838">https://ranking.mysmartcity.scipopulis.com/ranking/city/4838</a></li>
+<li><strong>[2]</strong> Portal Connected Smart Cities, set. 2025: <a href="https://portal.connectedsmartcities.com.br/2025/09/23/ranking-connected-smart-cities-inicia-novo-ciclo-com-abrangencia-nacional-e-metodologia-ampliada/">https://portal.connectedsmartcities.com.br/2025/09/23/ranking-connected-smart-cities-inicia-novo-ciclo-com-abrangencia-nacional-e-metodologia-ampliada/</a></li>
+<li><strong>[3]</strong> ABNT Certificadora, Smart Cities: <a href="https://abnt.org.br/certificacao/smartcities/">https://abnt.org.br/certificacao/smartcities/</a></li>
+</ul>
+<hr>
+<h2 id="etapa-2-posicionamento-da-cidade-e-crítica-dos-indicadores">Etapa 2: Posicionamento da cidade e crítica dos indicadores</h2>
+<h3 id="21-onde-a-cidade-aparece">2.1 Onde a cidade aparece</h3>
+<p>Fonte consultada diretamente pelo grupo: a ficha de Lajeado na plataforma oficial de consulta por município do Ranking Connected Smart Cities (<a href="https://ranking.mysmartcity.scipopulis.com/ranking/city/4838">https://ranking.mysmartcity.scipopulis.com/ranking/city/4838</a>), ano-base 2025.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posição geral no ranking</td>
+<td><strong>55º lugar</strong> no país, entre os 5.570 municípios</td>
+</tr>
+<tr>
+<td>Nota geral</td>
+<td><strong>51</strong>. A imprensa local havia divulgado 50,86; a plataforma mostra o valor arredondado. Registramos os dois números</td>
+</tr>
+<tr>
+<td>Posição na região</td>
+<td><strong>20ª</strong>. A plataforma não diz no rótulo se o recorte é a Região Sul ou o Rio Grande do Sul; anotamos o número e essa dúvida</td>
+</tr>
+<tr>
+<td>Posição por porte populacional</td>
+<td><strong>4ª</strong>. Lajeado está entre as quatro melhores da sua faixa de população</td>
+</tr>
+<tr>
+<td>Eixos apontados como destaque pela imprensa local</td>
+<td>Governança, Telecomunicações, Educação, Saúde e Segurança</td>
+</tr>
+</tbody>
+</table>
+<p>A plataforma também mostra um gráfico de radar (&quot;Notas do eixo&quot;) com os 13 eixos. Passando o cursor sobre o gráfico aparece um <em>tooltip</em> com a nota exata de cada eixo, e foi assim que conseguimos os números oficiais abaixo (não uma estimativa nossa):</p>
+<table>
+<thead>
+<tr>
+<th>Eixo temático</th>
+<th>Nota</th>
+<th>Eixo temático</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meio Ambiente e Mudanças Climáticas</td>
+<td><strong>24</strong></td>
+<td>Segurança</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Habitação e Planejamento Urbano</td>
+<td><strong>33</strong></td>
+<td>Saúde, Agricultura Local/Urbana e Segurança Alimentar</td>
+<td>54</td>
+</tr>
+<tr>
+<td>Mobilidade</td>
+<td><strong>34</strong></td>
+<td>Resíduos Sólidos, Esgotos e Água</td>
+<td>58</td>
+</tr>
+<tr>
+<td>Inovação e Empreendedorismo</td>
+<td>39</td>
+<td>Educação</td>
+<td>66</td>
+</tr>
+<tr>
+<td>Economia, Finanças</td>
+<td>44</td>
+<td>Telecomunicação</td>
+<td>73</td>
+</tr>
+<tr>
+<td>População, Condições Sociais</td>
+<td>44</td>
+<td>Governança</td>
+<td><strong>74</strong></td>
+</tr>
+<tr>
+<td>Energia</td>
+<td>44</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Os três piores eixos ficam bem separados dos outros: <strong>Meio Ambiente e Mudanças Climáticas (24)</strong>, <strong>Habitação e Planejamento Urbano (33)</strong> e <strong>Mobilidade (34)</strong> são os únicos abaixo de 35, com folga de 5 pontos até o quarto colocado (Inovação e Empreendedorismo, 39), que já está perto do grupo do meio. Do outro lado, <strong>Governança (74)</strong> e <strong>Telecomunicação (73)</strong> são os dois melhores, o que confirma parte do destaque que a imprensa local já tinha noticiado.</p>
+<p><strong>Como preenchemos a tabela abaixo:</strong> as três primeiras linhas são os três piores eixos, com a nota oficial (obrigatórias pela regra da atividade, e definidas pelo próprio dado). As duas últimas são escolha nossa: pegamos os dois eixos mais próximos do problema que o Canvas trata (saneamento e governança de dados), mesmo que nenhum dos dois esteja entre os três piores.</p>
+<table>
+<thead>
+<tr>
+<th>Eixo temático</th>
+<th>Nota e indicadores da cidade</th>
+<th>Leitura: o que esse resultado indica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meio Ambiente e Mudanças Climáticas</strong>, nota <strong>24</strong>: pior dos 13 eixos, 15 pontos abaixo do 4º colocado, e o único em que a maioria dos indicadores está simplesmente sem dado na ficha do município, o que puxa a nota para baixo antes de qualquer avaliação de desempenho</td>
+<td>Três dos quatro indicadores do eixo aparecem como &quot;-&quot;, sem dado: gastos com infraestrutura verde e azul, percentual de áreas de proteção natural e número de estações de monitoramento da qualidade do ar. Só a emissão de gases de efeito estufa por habitante tem valor reportado (4)</td>
+<td>Sem dado, o ranking trata como desempenho ruim ou não avaliável e a nota cai, independentemente de como o município está de fato. Bate com o ponto cego da Atividade 1 (Etapa 4.2): o risco de enchente do Taquari não aparece porque o dado ambiental não é coletado, não porque o risco seja baixo</td>
+</tr>
+<tr>
+<td><strong>Habitação e Planejamento Urbano</strong>, nota <strong>33</strong>: 2º pior eixo, e o que concentra os indicadores de drenagem urbana, permeabilidade do solo e alagamento de imóveis, temas que na Atividade 1 tratávamos como fora do alcance dos indicadores oficiais</td>
+<td>0% do orçamento anual gasto com manutenção da infraestrutura de águas pluviais; 8% dos imóveis residenciais alagam todos os anos; só 27% das áreas e pavimentos públicos são permeáveis; 20 pessoas em situação de rua por 100 mil habitantes</td>
+<td>Achado mais importante da comparação: o eixo é o 2º pior justamente <strong>porque carrega os indicadores de drenagem e alagamento</strong>. A falha que a Atividade 1 viu nos dados <em>locais</em> aparece agora, com nota oficial (33/100), como fraqueza medida no instrumento <em>nacional</em></td>
+</tr>
+<tr>
+<td><strong>Mobilidade</strong>, nota <strong>34</strong>: 3º pior eixo e último do grupo abaixo de 35 pontos, com folga de 5 pontos até o 4º colocado (Inovação e Empreendedorismo, 39), o que separa bem os três piores do grupo do meio</td>
+<td>27 mortes no trânsito por 100 mil habitantes; 0% dos veículos registrados são de baixa emissão; automóveis particulares por habitante também na faixa mais baixa da escala do ranking</td>
+<td>Confirma com números, e por um eixo inteiro, o problema (b) da Atividade 1: muita gente de carro próprio (85 veículos/100 hab.) e um único operador de transporte coletivo. E acrescenta um dado de segurança viária pior do que estimávamos pelos óbitos de 2023</td>
+</tr>
+<tr>
+<td><strong>Resíduos Sólidos, Esgotos e Água</strong>, nota <strong>58</strong>: 4ª melhor das 13 e acima da média, apesar dos números brutos ruins <em>(escolha do grupo: é o eixo mais próximo do problema que o Canvas trata)</em></td>
+<td>Só 4% da população é atendida por rede de coleta de esgoto; 13% do esgoto recebe tratamento; 49% da água é perdida (não faturada); apenas 4% do lixo urbano é reciclado, isso com 100% de coleta regular de lixo e 100% de acesso a água potável</td>
+<td>O eixo fica acima da média porque a nota do ranking é <em>relativa</em>: compara Lajeado com os outros 5.570 municípios, e o déficit de esgoto é problema geral no Brasil. Grave em números absolutos e ainda alvo principal da PMDU, mas não um dos pontos mais fracos da cidade</td>
+</tr>
+<tr>
+<td><strong>Governança</strong>, nota <strong>74</strong>: melhor eixo da cidade, 1 ponto acima de Telecomunicação (73), e o único que se aproxima do tema de governança de dados <em>(escolha do grupo: é o eixo mais próximo do problema que o Canvas trata)</em></td>
+<td>76% de participação eleitoral; 24% de mulheres eleitas; nota 6 no desempenho da gestão de obras públicas, a mais baixa do eixo; o IFDM entra aqui como 1 dos 75 indicadores, dentro deste eixo</td>
+<td>Coerente com os recursos digitais mapeados na Atividade 1 (transparência, dados abertos, e-SIC). Mas a nota 6 em obras públicas mostra bom resultado convivendo com fraqueza de execução. E o eixo mede resultados publicados, não se existe estrutura de TI com orçamento próprio</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-confronto-com-o-diagnóstico-da-atividade-1">2.2 Confronto com o diagnóstico da Atividade 1</h3>
+<p>Na Etapa 4 da Atividade 1 apontamos três problemas urbanos sustentados por dado: (a) falta grave de rede coletora de esgoto; (b) excesso de uso do carro particular frente a um único operador de transporte coletivo; e (c) fragilidade institucional na governança de dados e TI. Comparando com o que o radar do ranking mede, encontramos duas confirmações, uma divergência e um problema sem correspondência.</p>
+<p><strong>Confirmação direta no problema (b).</strong> O eixo Mobilidade é o 3º pior de Lajeado (34 pontos), com 27 mortes no trânsito por 100 mil habitantes e 0% de veículos de baixa emissão. Antes tínhamos só a taxa de motorização; agora um eixo inteiro do instrumento externo aponta na mesma direção.</p>
+<p><strong>Confirmação inesperada no ponto cego de enchentes.</strong> Dois dos três piores eixos, Meio Ambiente e Mudanças Climáticas (o pior, nota 24) e Habitação e Planejamento Urbano (o 2º pior, nota 33), são exatamente os que carregam os indicadores de risco de água e drenagem: falta de monitoramento ambiental, 8% dos imóveis alagando por ano, 0% de orçamento para manutenção da rede pluvial. O que na Atividade 1 era &quot;uma coisa que os indicadores locais não medem&quot; aparece agora, por outra fonte e de forma independente, como fraqueza medida no ranking nacional.</p>
+<p><strong>Divergência no problema (a): o indicador não capta o problema com a mesma força.</strong> Mesmo com 4% de atendimento por rede de esgoto e 49% de perda de água, o eixo Resíduos Sólidos, Esgotos e Água <strong>não</strong> está entre os três piores da cidade, está mais perto do grupo forte. Como explicado em 2.1, a nota é relativa aos outros municípios. Isso não invalida o problema: ele continua grave e bem documentado, com o SNIS e a ficha do ranking chegando ao mesmo diagnóstico por caminhos diferentes (2,2% contra 4% de cobertura). O que muda é a leitura: não é o eixo mais crítico <em>quando comparamos Lajeado com outras cidades</em>, mas segue sendo o mais crítico <em>dentro de Lajeado</em>.</p>
+<p><strong>Problema (c) sem correspondência nenhuma.</strong> A ausência de uma estrutura de TI não aparece em nenhum dos 13 eixos: nenhum dos 75 indicadores pergunta sobre organização administrativa de TI. O eixo mais próximo do assunto, Governança, é justamente o mais forte do radar, porque mede resultados publicados (transparência, participação eleitoral, gestão de obras) e não se existe um órgão com orçamento e equipe. Isso confirma que a fragilidade que apontamos é real e documentada, mas que esse tipo de indicador não consegue vê-la.</p>
+<hr>
+<h2 id="etapa-3-revisão-do-canvas-à-luz-da-medição">Etapa 3: Revisão do Canvas à luz da medição</h2>
+<h3 id="31-aderência-entre-a-proposta-e-a-medição">3.1 Aderência entre a proposta e a medição</h3>
+<p><strong>O problema que a solução do Canvas ataca corresponde a algum dos eixos de pior desempenho da cidade?</strong> Em parte, e de um jeito diferente do que esperávamos. Dos três eixos mais fracos, dois (Meio Ambiente e Habitação e Planejamento Urbano) correspondem direto à frente de sensores de cheia e drenagem do Canvas (Nível 5, item 1), e o terceiro, Mobilidade, corresponde à frente de IoT no transporte coletivo (GPS e contagem de passageiros). Já o saneamento, que era o problema mais citado na Atividade 1, <strong>não</strong> está entre os três piores: ele é grave em números absolutos, mas na comparação nacional Lajeado vai relativamente bem (ver 2.2). Resumindo: a proposta acerta os dois eixos mais críticos por um caminho que nem era a nossa prioridade número 1, e mantém como alvo central um eixo que é ruim localmente mas não é o mais fraco da cidade no comparativo.</p>
+<p><strong>Existe algum eixo crítico que não percebemos na Atividade 1 e que deveria entrar no escopo da proposta?</strong> Sim: <strong>Habitação e Planejamento Urbano</strong>, na parte de drenagem urbana e ocupação de áreas que alagam. Na Atividade 1 tratamos o risco de enchente como algo fora dos indicadores oficiais (Etapa 4.2), mas não chegamos a transformá-lo em um eixo de planejamento urbano com indicadores próprios: percentual de área permeável, gasto com manutenção da rede pluvial, percentual de imóveis alagados por ano. Na versão 2, esses indicadores entram de forma explícita, e não apenas a resposta de emergência (alerta de cheia) que já estava prevista.</p>
+<p><strong>Algum benefício esperado do Canvas não tem indicador correspondente?</strong> Sim: &quot;primeiro núcleo de governança de dados municipal&quot; não tem equivalente nem nos 75 indicadores do ranking nem nos dados oficiais locais. A Atividade 1 já tinha registrado que o orçamento e a equipe de TI não são divulgados separadamente. Agora sabemos o motivo com mais clareza: o eixo mais próximo do tema (Governança) mede resultados publicados, não estrutura organizacional. Mantemos a solução já proposta: medir esse benefício por indicador de processo (existência formal de um comitê e de um DPO), e não por um indicador de resultado comparável ao ranking.</p>
+<h3 id="32-reescrita-dos-indicadores-de-sucesso">3.2 Reescrita dos indicadores de sucesso</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Indicador 1</th>
+<th>Indicador 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Como está hoje no Canvas</strong></td>
+<td>&quot;Percentual de cobertura de rede coletora de esgoto ao longo do tempo&quot;</td>
+<td>&quot;Tempo médio de alerta antes de eventos de cheia&quot;</td>
+</tr>
+<tr>
+<td><strong>Redação operacional proposta</strong></td>
+<td>Percentual da população urbana de Lajeado atendida por sistema de coleta e afastamento de esgoto, medido a cada ano, com meta de crescimento sobre a linha de base</td>
+<td>Tempo, em minutos, entre a emissão do alerta e o momento em que o sensor registra o nível crítico, para cada evento de cheia do rio Taquari em Lajeado</td>
+</tr>
+<tr>
+<td><strong>Fórmula de cálculo e unidade</strong></td>
+<td>(habitantes atendidos por coleta e afastamento de esgoto ÷ população urbana total) × 100, em %</td>
+<td>Diferença entre os dois horários, em minutos, com média móvel dos eventos do ano</td>
+</tr>
+<tr>
+<td><strong>Fonte do dado e órgão detentor</strong></td>
+<td>Duas fontes primárias, com a divergência registrada: SNIS/Ministério das Cidades via Corsan (2,2% de cobertura de rede, 2022) e Ranking CSC via ficha municipal (4% da população atendida, 2025). Mantemos as duas, deixando clara a diferença de metodologia, como a atividade exige</td>
+<td>Sensores de nível de rio da PMDU (proposta) integrados à Defesa Civil de Lajeado. Hoje não existem, o que é confirmado pela ausência de dado (&quot;-&quot;) nos indicadores de monitoramento ambiental da própria ficha do ranking</td>
+</tr>
+<tr>
+<td><strong>Periodicidade de atualização</strong></td>
+<td>Anual, acompanhando o SNIS e a atualização anual da ficha do Ranking CSC</td>
+<td>Por evento (cada cheia), com consolidação em relatório anual</td>
+</tr>
+<tr>
+<td><strong>Situação do dado</strong></td>
+<td>Existe e é público, em duas fontes com metodologias e valores diferentes (2,2% e 4%). Optamos por registrar as duas</td>
+<td>Não é coletado hoje; depende da instalação dos sensores previstos na PMDU, e a ficha do ranking confirma que não há estações de monitoramento ambiental na cidade</td>
+</tr>
+<tr>
+<td><strong>Correspondência com o ranking ou com norma ISO</strong></td>
+<td>Corresponde direto ao eixo Resíduos Sólidos, Esgotos e Água do Ranking CSC (indicador &quot;% da população atendida por sistemas de coleta e afastamento de esgoto&quot;, já com selo &quot;ABNT ISO&quot; na ficha de Lajeado). Correspondência verificada, ainda que esse não seja um dos três eixos mais fracos da cidade (ver 2.1 e 2.2)</td>
+<td>Corresponde à ABNT NBR ISO 37123 (cidades resilientes) e, no eixo Habitação e Planejamento Urbano, ao indicador que já existe de &quot;imóveis residenciais alagados por ano como % do total&quot;, hoje em 8% para Lajeado. Mas não há nenhum indicador de <em>tempo de resposta</em> entre os 75 do ranking, então essa parte precisa ser criada por nós, não pode ser só herdada</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-registro-de-decisão">3.3 Registro de decisão</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Registro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Decisão</strong></td>
+<td><strong>Ajustar</strong> a proposta no escopo e nos indicadores, mantendo a arquitetura geral da PMDU</td>
+</tr>
+<tr>
+<td><strong>Evidência da Etapa 2 que sustenta a decisão</strong></td>
+<td>A posição geral de Lajeado (55º no país, nota 51, 4ª no seu porte populacional) mostra que a cidade não está em situação crítica no conjunto, então não faz sentido trocar o problema da proposta. Ao mesmo tempo, o radar mostra que os três eixos mais fracos já estão, total ou parcialmente, dentro do Canvas v1, mas que o alvo tratado até agora como prioridade nº 1 (saneamento) não está entre eles. Isso já é evidência suficiente para ajustar o escopo e o peso de cada foco, sem precisar abandonar a proposta</td>
+</tr>
+<tr>
+<td><strong>O que muda no Canvas, bloco a bloco</strong></td>
+<td><strong>Bloco 2 (Diagnóstico):</strong> entra a posição real no Ranking CSC 2025 (55º, nota 51, 20ª na região, 4ª por porte) e os três eixos mais fracos com nota oficial. <strong>Bloco 4 (Solução proposta):</strong> os sensores e indicadores de drenagem e alagamento passam a ser uma frente formal da PMDU, não só resposta de emergência por alerta de cheia. <strong>Bloco 6 (Benefícios esperados):</strong> o benefício de governança de dados continua medido por indicador de processo, conforme 3.1. <strong>Bloco 9 (Indicadores de sucesso):</strong> os dois primeiros indicadores são substituídos pela versão da Etapa 3.2, incluindo o registro da divergência entre SNIS e Ranking CSC no indicador de esgoto, mais um novo indicador de drenagem ligado ao eixo Habitação e Planejamento Urbano</td>
+</tr>
+<tr>
+<td><strong>O que permanece e por quê</strong></td>
+<td>Continuam a arquitetura de três camadas (Coleta / Integração / Aplicação) e o cuidado com privacidade desde o projeto (LGPD): nada na medição externa contrariou essas duas escolhas. O saneamento também continua entre os focos, porque segue grave em números absolutos (dado local e ficha do ranking concordam nisso), mas deixa de ser tratado como <em>o</em> eixo mais crítico da cidade frente às outras. Esse lugar, segundo o radar, é de meio ambiente / risco de cheia e de planejamento urbano / drenagem, que passam a ter peso equivalente na priorização da PMDU</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="canvas-de-município-inteligente-lajeado-rs-versão-2">Canvas de Município Inteligente: Lajeado (RS), versão 2</h2>
+<p><strong>Rio, Rede e Governança · Vale do Taquari, RS</strong></p>
+<p><img src="file:////Users/kauan.calheiro/Developer/cidades-inteligentes/aula_03/Canvas_Municipio_Inteligente_Lajeado_v2.png" alt="Diagrama Canva"></p>
+<hr>
+<h2 id="fontes-e-uso-de-inteligência-artificial">Fontes e uso de inteligência artificial</h2>
+<p>A base deste trabalho são os documentos que o grupo já entregou nas atividades anteriores (Ficha-retrato, Mapa de Atores e Canvas v1), somados ao material do curso Cidades Inteligentes (EV.G/Enap, 2021) e às seguintes fontes primárias: o portal oficial do Ranking Connected Smart Cities; a ficha pública de Lajeado na plataforma de consulta por município (<a href="https://ranking.mysmartcity.scipopulis.com/ranking/city/4838">https://ranking.mysmartcity.scipopulis.com/ranking/city/4838</a>, incluindo o <em>tooltip</em> com a nota oficial dos 13 eixos, com prints capturados pelo grupo em 18/08/2026); matérias da imprensa local do Vale do Taquari com declaração direta do secretário municipal responsável; e páginas institucionais da ABNT e do CBCS sobre a vigência das normas ISO 37120/37122/37123.</p>
+<p>O grupo usou o <strong>Claude (Anthropic)</strong> como ferramenta de apoio em duas frentes: pesquisa e verificação da vigência das fontes primárias exigidas na Etapa 1, e revisão de texto e montagem da tabela de indicadores reescritos e do Canvas versão 2, sempre a partir do conteúdo e das decisões produzidas pelo grupo.</p>
+
+            
+            
+        </body>
+        </html>
